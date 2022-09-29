@@ -1,16 +1,29 @@
 
-import notFound from '../pages/404'
-import about from '../pages/about'
+import Home from '../pages/home'
+import NotFound from '../pages/404'
+import About from '../pages/about'
+
 const routers = [
   {
-    title: '404',
     path: '/',
-    component: notFound
+    element: <Home/>
   },
   {
-    title: 'about',
+    path: '/404',
+    element: <NotFound></NotFound>
+  },
+  {
     path: '/about',
-    component: about
+    children: [
+      {
+        path: '/about',
+        element: About
+      },
+      {
+        path: '404',
+        element: <NotFound></NotFound>
+      }
+    ]
   }
 ]
 

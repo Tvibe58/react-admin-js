@@ -1,37 +1,23 @@
 import './App.scss';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Link, useRoutes } from 'react-router-dom'
 import routers from './router';
+function RouteElement () {
+  const element = useRoutes(routers)
+  return element
+}
 
-function App() {
+function App () {
   return (
-    <div className="App">
-      <a
-        className="App-link"
-        href="/"
-        target="_self"
-      >
-        home
-      </a>
+    <BrowserRouter>
+      <Link to="/">home</Link>
       &nbsp;
-      <a
-        className="App-link"
-        href="/about"
-        target="_self"
-      >
-        about
-      </a>
-      <Router>
-        <Routes>
-          {
-            routers.map((item, index) => {
-              return (
-                <Route key={index} exact path={item.path} element={<item.component />}></Route>
-              )
-            })
-          }
-        </Routes>
-      </Router>
-    </div>
+      <Link to="/about">About</Link>
+      &nbsp;
+      <Link to="/404">404</Link>
+      &nbsp;
+      <Link to="/about/404">404</Link>
+      <RouteElement />
+    </BrowserRouter >
   );
 }
 
