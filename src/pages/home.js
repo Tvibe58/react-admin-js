@@ -1,6 +1,6 @@
 const home = () => (
   <div>
-    home
+    home s
   </div>
 )
 export default home;
