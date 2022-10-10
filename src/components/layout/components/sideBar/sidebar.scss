@@ -1,16 +1,9 @@
 #app {
   // 主体区域 Main container
   .main-container {
-    min-height: 100%;
     transition: margin-left 0.28s;
     margin-left: $sideBarWidth;
     position: relative;
-    & > .app-container {
-      position: absolute;
-      width: 100%;
-      // overflow-y: auto;
-      background-color: #f1f1f1;
-    }
   }
 
   // 侧边栏 Sidebar container
