@@ -1,4 +1,4 @@
-import Empty from '../components/layout/Empty.jsx'
+import Empty from '../components/layout/Empty'
 import Layout from '../components/layout/Layout'
 import { useRoutes, Navigate } from 'react-router-dom'
 import Home from 'pages/home'
