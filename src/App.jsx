@@ -1,14 +1,14 @@
+import React from 'react';
 import './App.scss';
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom';
 import { RouteElement } from './router/index';
 
-
-function App () {
+function App() {
   return (
-    <div id='app'>
+    <div id="app">
       <BrowserRouter>
         <RouteElement />
-      </BrowserRouter >
+      </BrowserRouter>
     </div>
   );
 }

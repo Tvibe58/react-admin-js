@@ -1,6 +1,10 @@
-const Topbar = () => (
-  <div className="topbar">
-    topbar
-  </div>
-)
+import React from 'react';
+
+function Topbar() {
+  return (
+    <div className="topbar">
+      topbar
+    </div>
+  );
+}
 export default Topbar;
