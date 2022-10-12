@@ -27,7 +27,6 @@ class SiderBar extends React.Component {
       <div className="sidebar-container">
         <div className="scrollbar-wrapper">
           <SiderBarMenu isCollapsed={isCollapsed} menuRouters={menuRouters} />
-
         </div>
         <div className="collapse">
           <Toggle isActive={!isCollapsed} toggleClick={this.toggleClick} />

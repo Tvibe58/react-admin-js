@@ -5,10 +5,7 @@ import PropTypes from 'prop-types';
 function Toggle(props) {
   const { isActive, toggleClick } = props;
   return (
-    <div
-      className="com-toggle"
-      onClick={toggleClick}
-    >
+    <div className="com-toggle" onClick={toggleClick}>
       <svg
         className={isActive ? 'is-active' : ''}
         viewBox="0 0 1024 1024"

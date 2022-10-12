@@ -15,7 +15,6 @@ const renderMenu = (data) => data.map((item) => {
 });
 
 function SiderBarMenu(props) {
-// function SiderBarMenu({isCollapsed, menuRouters}) {
   const { isCollapsed, menuRouters } = props;
   const navigate = useNavigate();
   const onClick = (e) => {
