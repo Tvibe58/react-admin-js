@@ -1,5 +1,7 @@
 import React from 'react';
 import { Space, Table, Tag } from 'antd';
+import { useSelector, useDispatch } from 'react-redux';
+import { decrement, increment } from 'store/reducer/counterSlice';
 
 const { Column, ColumnGroup } = Table;
 const data = [
@@ -30,39 +32,58 @@ const data = [
 ];
 
 function DemoList() {
+  const count = useSelector((state) => state.counter.value);
+  const dispatch = useDispatch();
   return (
-    <Table dataSource={data}>
-      <ColumnGroup title="Name">
-        <Column title="First Name" dataIndex="firstName" key="firstName" />
-        <Column title="Last Name" dataIndex="lastName" key="lastName" />
-      </ColumnGroup>
-      <Column title="Age" dataIndex="age" key="age" />
-      <Column title="Address" dataIndex="address" key="address" />
-      <Column
-        title="Tags"
-        dataIndex="tags"
-        key="tags"
-        render={(tags) => (
-          <>
-            {tags.map((tag) => (
-              <Tag color="blue" key={tag}>
-                {tag}
-              </Tag>
-            ))}
-          </>
-        )}
-      />
-      <Column
-        title="Action"
-        key="action"
-        render={(_, record) => (
-          <Space size="middle">
-            Invite
-            {record.lastName}
-          </Space>
-        )}
-      />
-    </Table>
+    <div>
+      <div>
+        <button
+          aria-label="Increment value"
+          onClick={() => dispatch(increment())}
+        >
+          Increment
+        </button>
+        <span>{count}</span>
+        <button
+          aria-label="Decrement value"
+          onClick={() => dispatch(decrement())}
+        >
+          Decrement
+        </button>
+      </div>
+      <Table dataSource={data}>
+        <ColumnGroup title="Name">
+          <Column title="First Name" dataIndex="firstName" key="firstName" />
+          <Column title="Last Name" dataIndex="lastName" key="lastName" />
+        </ColumnGroup>
+        <Column title="Age" dataIndex="age" key="age" />
+        <Column title="Address" dataIndex="address" key="address" />
+        <Column
+          title="Tags"
+          dataIndex="tags"
+          key="tags"
+          render={(tags) => (
+            <>
+              {tags.map((tag) => (
+                <Tag color="blue" key={tag}>
+                  {tag}
+                </Tag>
+              ))}
+            </>
+          )}
+        />
+        <Column
+          title="Action"
+          key="action"
+          render={(_, record) => (
+            <Space size="middle">
+              Invite
+              {record.lastName}
+            </Space>
+          )}
+        />
+      </Table>
+    </div>
   );
 }
 

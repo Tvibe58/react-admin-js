@@ -58,7 +58,7 @@ export const routers = [
       {
         path: '/',
         name: 'aa',
-        element: Empty,
+        element: <Empty />,
         icon: <AppstoreOutlined />,
         meta: {
           title: 'Demo'

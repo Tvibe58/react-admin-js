@@ -35,23 +35,10 @@
           cursor: pointer;
           color: #0064fe;
         }
-        .el-menu {
-          float: left;
-          border-bottom: 0;
-          .el-submenu__icon-arrow {
-            display: inline-block;
-          }
-          .el-submenu__title {
-            border-bottom: none !important;
-          }
-        }
       }
       .right {
         display: flex;
         align-items: center;
-        .el-dropdown {
-          color: #000;
-        }
         .ctrl {
           display: flex;
           padding: 0 15px;

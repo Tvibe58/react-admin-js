@@ -34,7 +34,7 @@ function SiderBarMenu(props) {
 
 SiderBarMenu.propTypes = {
   isCollapsed: PropTypes.bool,
-  menuRouters: PropTypes.arrayOf
+  menuRouters: PropTypes.array
 };
 SiderBarMenu.defaultProps = {
   isCollapsed: false,
