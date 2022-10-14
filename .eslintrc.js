@@ -17,26 +17,79 @@ module.exports = {
     'react'
   ],
   rules: {
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }], // 限制可能包含JSX的文件扩展名
-    'linebreak-style': ['error', 'unix'], // 强制使用Linux的LF换行符
-    'comma-dangle': [ // 末尾逗号
-      'error', {
-        arrays: 'never',
-        objects: 'never',
-        imports: 'never',
-        exports: 'never',
-        functions: 'never'
-      }
+    // 关闭换行符操作系统格式问题
+    'linebreak-style': [
+      'off',
+      'unix'
     ],
-    'no-param-reassign': [
-      'error', {
-        props: false
-      }
+    // 末尾不加逗号
+    'comma-dangle': ['error', 'never'],
+    quotes: [
+      'error',
+      'single'
     ],
-    'react/prop-types': 'error', // 防止React组件定义中缺少道具验证
-    'jsx-a11y/click-events-have-key-events': 'off', // 关闭强制一个可单击的非交互元素至少有一个键盘事件监听器。
-    'jsx-a11y/no-static-element-interactions': 'off', // 关闭强制要求有交互操作的静态标签设置role属性
-    'jsx-a11y/no-noninteractive-element-interactions': 'off', // 关闭强制要求非交互语义标签(main,hX,ul,ol,liarea)不包含交互事件(onClick等)
-    'react/ptop-types': 0
+    semi: [
+      'error',
+      'always'
+    ],
+    // 禁止缩进错误
+    // indent: 0,
+    // 关闭不允许使用 no-tabs
+    'no-tabs': 'off',
+    'no-console': 1,
+    // 设置不冲突 underscore 库
+    'no-underscore-dangle': 0,
+    // 箭头函数直接返回的时候不需要 大括号 {}
+    'arrow-body-style': [2, 'as-needed'],
+    'no-alert': 'error',
+
+    // 设置是否可以重新改变参数的值
+    'no-param-reassign': 0,
+    // 允许使用 for in
+    'no-restricted-syntax': 0,
+    'guard-for-in': 0,
+    // 不需要每次都有返回
+    'consistent-return': 0,
+    // 允许使用 arguments
+    'prefer-rest-params': 0,
+    // 允许返回 await
+    'no-return-await': 0,
+    // 不必在使用前定义 函数
+    'no-use-before-define': 0,
+    // 不允许代码后面空白
+    'no-trailing-spaces': 1,
+
+    // 关闭大括号内的换行符要求
+    'object-curly-newline': 0,
+
+    // 关闭强制要求有交互操作的静态标签设置role属性
+    'jsx-a11y/no-static-element-interactions': 0,
+    // 关闭强制一个可单击的非交互元素至少有一个键盘事件监听器。
+    'jsx-a11y/click-events-have-key-events': 0,
+    // 类成员之间空行问题
+    'lines-between-class-members': 0,
+
+    // 按钮元素需要明确的type属性
+    'react/button-has-type': 0,
+
+    // 不区分是否在 despendencies
+    'import/no-extraneous-dependencies': 0,
+    // 引用时候根据根目录基础
+    'import/no-unresolved': 0,
+
+    // 关闭解构赋值报错
+    'react/destructuring-assignment': 0,
+    // 允许在 .js 和 .jsx 文件中使用  jsx
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    // jsx > 紧跟着属性
+    // 'react/jsx-closing-bracket-location': [1, 'after-props'],
+    // 不区分是否是 无状态组件
+    'react/prefer-stateless-function': 0,
+    // prop-types忽略children属性
+    'react/prop-types': [1, { ignore: ['children'] }],
+    // 关闭禁止prop-types类型
+    'react/forbid-prop-types': 0,
+    // 关闭default-props检查
+    'react/require-default-props': 0
   }
 };
